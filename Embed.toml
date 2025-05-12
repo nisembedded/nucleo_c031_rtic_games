@@ -20,11 +20,12 @@ halt_afterwards = false
 [default.general]
 chip = "stm32c031c6tx"
 chip_descriptions = []
-log_level = "DEBUG"
+log_level = "INFO"
 
 [default.rtt]
-enabled = true
+enabled = false
 timeout = 3000
+down_channels = []
 
 [default.gdb]
 enabled = false

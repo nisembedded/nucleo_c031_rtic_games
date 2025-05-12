@@ -1,27 +1,17 @@
 [package]
 name = "nucleo_c031_rtic_games"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
 cortex-m = { version = "0.7.7", features=["critical-section-single-core"] }
 cortex-m-rt = "0.7.1"
-cortex-m-rtic = "1.0.0"
-cortex-m-semihosting = "0.3.7"
+cortex-m-rtic = "1.1.3"
 panic-halt = "0.2.0"
 panic-semihosting = "0.6.0"
-ssd1306 = "0.8.4"
-display-interface-spi = "0.4.1"
-embedded-graphics = "0.8.1"
-klaptik = { version = "0.2.1", features = ["ssd1306"] }
-# rtt
-rtt-target = { version = "0.6.1" }
-defmt-rtt = { version = "1.0.0" }
-defmt = { version = "1.0.1" }
-# fix point
-dyadic = "0.0.8"
-# console
-ushell = "0.4.0"
+panic-probe = { version = "0.3.0", features = ["print-defmt"] }
+defmt-rtt = { version = "0.4.0" }
+defmt = { version = "0.3.2" }
 
 [dependencies.stm32c0]
 git = "https://github.com/stm32-rs/stm32-rs-nightlies"

@@ -1,9 +1,11 @@
 #![no_std]
 #![no_main]
-#![deny(warnings)]
 
-use panic_semihosting as _;
+
 use stm32c0xx_hal as hal;
+
+use defmt::info;
+use {defmt_rtt as _, panic_probe as _};
 
 use hal::exti::Event;
 use hal::gpio::*;
@@ -40,6 +42,12 @@ mod app {
         let mut exti = ctx.device.EXTI;
         gpioc.pc13.listen(SignalEdge::Falling, &mut exti);
 
+        info!("System initialized");
+        info!("Press the button to start/stop the timer");
+        info!("LED is on PA5");
+        info!("Button is on PC13");
+        info!("Timer is on TIM17");
+
         (
             Shared { timer },
             Local {
@@ -66,12 +74,13 @@ mod app {
             }
         });
         ctx.local.exti.unpend(Event::GPIO13);
+        info!("Button clicked");
     }
 
     #[idle]
     fn idle(_: idle::Context) -> ! {
         loop {
-            cortex_m::asm::wfi();
+            cortex_m::asm::nop();
         }
     }
 }

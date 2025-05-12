@@ -1,11 +1,17 @@
 [target.thumbv6m-none-eabi]
 # runner = "arm-none-eabi-gdb -q"
-runner = "probe-run --chip STM32C031C6T3"
+runner = "probe-rs run --chip STM32C031C6Tx"
 
 rustflags = [
   "-C", "linker=arm-none-eabi-ld",
-  "-C", "link-arg=-Tlink.x"
+  "-C", "link-arg=-Tlink.x",
+  "-C", "link-arg=-Tdefmt.x",
 ]
 
 [build]
 target = "thumbv6m-none-eabi"
+
+[env]
+# Obvious environment variables
+# defmt debug level, https://defmt.ferrous-systems.com/filtering.html
+DEFMT_LOG = "info"
