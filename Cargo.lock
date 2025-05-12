@@ -469,7 +469,7 @@ dependencies = [
 [[package]]
 name = "stm32c0xx-hal"
 version = "0.0.0"
-source = "git+https://github.com/stm32-rs/stm32c0xx-hal#ac492c1d01b672ea67307013c6fe936335714bc4"
+source = "git+https://github.com/stm32-rs/stm32c0xx-hal#608d5fcbe7b0bab7131c39670aaf104f85c4c226"
 dependencies = [
  "bare-metal 1.0.0",
  "cortex-m",
