@@ -458,7 +458,7 @@ checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
 [[package]]
 name = "stm32c0"
 version = "0.16.0"
-source = "git+https://github.com/stm32-rs/stm32-rs-nightlies#d234b48924e26dc3a6335ab678ab313d18b25423"
+source = "git+https://github.com/stm32-rs/stm32-rs-nightlies#a6f9eb65bc360a8efb40f92853461b97b0b93203"
 dependencies = [
  "cortex-m",
  "cortex-m-rt",
@@ -469,7 +469,7 @@ dependencies = [
 [[package]]
 name = "stm32c0xx-hal"
 version = "0.0.0"
-source = "git+https://github.com/stm32-rs/stm32c0xx-hal#608d5fcbe7b0bab7131c39670aaf104f85c4c226"
+source = "git+https://github.com/stm32-rs/stm32c0xx-hal#a431e703441a2d82d202c4fedf60141a63c863f2"
 dependencies = [
  "bare-metal 1.0.0",
  "cortex-m",
