@@ -1,7 +1,6 @@
 #![no_std]
 #![no_main]
 
-
 use stm32c0xx_hal as hal;
 
 use defmt::info;
