@@ -30,7 +30,7 @@ mod app {
     }
 
     #[idle]
-    fn idle(cx: idle::Context) -> ! {
+    fn idle(_: idle::Context) -> ! {
         info!("Idle task running");
 
         // Some backends provide a manual way of pending an interrupt.
