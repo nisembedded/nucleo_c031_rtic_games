@@ -23,7 +23,7 @@ mod app {
     }
 
     #[init]
-    fn init(_: init::Context) -> (Shared, Local, init::Monotonics) {
+    fn init(_: init::Context) -> (Shared, Local) {
         foo::spawn().unwrap();
         bar::spawn().unwrap();
         
@@ -34,7 +34,6 @@ mod app {
                 local_to_bar: 0,
                 local_to_idle: 0,
             },
-            init::Monotonics(),
         )
     }
 
@@ -49,14 +48,14 @@ mod app {
     }
 
     #[task(local = [local_to_foo], priority = 1)]
-    fn foo(cx: foo::Context) {
+    async fn foo(cx: foo::Context) {
         let local = cx.local.local_to_foo;
         *local += 1;
         info!("Foo task running, local_to_foo: {}", local);
     }
 
     #[task(local = [local_to_bar], priority = 1)]
-    fn bar(cx: bar::Context) {
+    async fn bar(cx: bar::Context) {
         let local = cx.local.local_to_bar;
         *local += 1;
         info!("Bar task running, local_to_bar: {}", local);

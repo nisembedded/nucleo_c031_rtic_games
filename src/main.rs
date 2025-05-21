@@ -29,7 +29,7 @@ mod app {
     }
 
     #[init]
-    fn init(ctx: init::Context) -> (Shared, Local, init::Monotonics) {
+    fn init(ctx: init::Context) -> (Shared, Local) {
         let mut rcc = ctx.device.RCC.constrain();
         let gpioa = ctx.device.GPIOA.split(&mut rcc);
         let gpioc = ctx.device.GPIOC.split(&mut rcc);
@@ -53,7 +53,6 @@ mod app {
                 exti,
                 led: gpioa.pa5.into_push_pull_output(),
             },
-            init::Monotonics(),
         )
     }
 

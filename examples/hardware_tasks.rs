@@ -19,25 +19,20 @@ mod app {
     struct Local {}
 
     #[init]
-    fn init(_: init::Context) -> (Shared, Local, init::Monotonics) {
+    fn init(_: init::Context) -> (Shared, Local) {
         // Pends the USART1 interrupt but its handler won't run until
         // `init` return because the interrupt is not enabled yet.
         rtic::pend(stm32::Interrupt::USART1);
 
         info!("System initialized");
-        
-        (
-            Shared {},
-            Local {
-            },
-            init::Monotonics(),
-        )
+
+        (Shared {}, Local {})
     }
 
     #[idle]
     fn idle(cx: idle::Context) -> ! {
         info!("Idle task running");
-        
+
         // Some backends provide a manual way of pending an interrupt.
         rtic::pend(stm32::Interrupt::USART1);
         loop {
