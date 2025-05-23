@@ -39,7 +39,7 @@ mod app {
     }
 
     #[task(shared = [shared1, shared2, shared3])]
-    async fn locks(mut c: locks::Context) {
+    async fn locks(c: locks::Context) {
         let (s1, s2, s3) = (c.shared.shared1, c.shared.shared2, c.shared.shared3);
         (s1, s2, s3).lock(|s1, s2, s3| {
             *s1 += 1;
