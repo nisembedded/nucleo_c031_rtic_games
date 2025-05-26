@@ -6,8 +6,6 @@ use stm32c0xx_hal as hal;
 use defmt::info;
 use {defmt_rtt as _, panic_probe as _};
 
-use cortex_m_semihosting::{hprintln};
-
 use hal::stm32;
 
 use rtic_monotonics::systick::prelude::*;
@@ -55,7 +53,7 @@ mod app {
         // ANCHOR: timeout_after_basic
         // Call hal with short absolute timeout using `timeout_after`.
         match Mono::timeout_after(1000.millis(), hal_get(3)).await {
-            Ok(v) => hprintln!("hal_get(3) returned: {} at time {}", v, Mono::now()),
+            Ok(v) => info!("hal_get(3) returned: {} at time {}", v, Mono::now()),
             Err(_) => info!("Timeout after 1000ms"),
         }
         // ANCHOR_END: timeout_after_basic
@@ -72,11 +70,11 @@ mod app {
 
             // ablsolute point in time for timeout
             let timeout = instant + 500.millis();
-            hprintln!("now is {:?}, timeout at {:?}", Mono::now(), timeout);
+            info!("now is {:?}, timeout at {:?}", Mono::now(), timeout);
 
             match Mono::timeout_at(timeout, hal_get(n)).await {
                 Ok(v) => info!("hal_get({}) returned: {}", n, v),
-                Err(_) => hprintln!("Timeout at {:?}", timeout),
+                Err(_) => info!("Timeout at {:?}", timeout),
             }
             // ANCHOR_END: timeout_at_basic
         }
