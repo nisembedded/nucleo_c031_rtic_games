@@ -16,4 +16,4 @@ target = "thumbv6m-none-eabi"
 [env]
 # Obvious environment variables
 # defmt debug level, https://defmt.ferrous-systems.com/filtering.html
-DEFMT_LOG = "info"
+DEFMT_LOG = "debug"
