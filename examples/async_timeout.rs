@@ -64,11 +64,11 @@ mod app {
 
         // do this 3 times
         for n in 0..3 {
-            // aboslute point in time without drift
+            // absolute point in time without drift
             instant += 1000.millis();
             Mono::delay_until(instant).await;
 
-            // ablsolute point in time for timeout
+            // absolute point in time for timeout
             let timeout = instant + 500.millis();
             info!("now is {:?}, timeout at {:?}", Mono::now(), timeout);
 
