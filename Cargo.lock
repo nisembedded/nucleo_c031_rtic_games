@@ -554,7 +554,8 @@ checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
 [[package]]
 name = "stm32c0"
 version = "0.16.0"
-source = "git+https://github.com/stm32-rs/stm32-rs-nightlies#a6f9eb65bc360a8efb40f92853461b97b0b93203"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c6999cb5bf6b9cf0efd1184cd14d3d2a1fdc03de4603fba7d840492be0e3de1f"
 dependencies = [
  "cortex-m",
  "cortex-m-rt",
@@ -565,7 +566,7 @@ dependencies = [
 [[package]]
 name = "stm32c0xx-hal"
 version = "0.0.0"
-source = "git+https://github.com/stm32-rs/stm32c0xx-hal#a431e703441a2d82d202c4fedf60141a63c863f2"
+source = "git+https://github.com/stm32-rs/stm32c0xx-hal#03bb9f21124a9c21f89c8429cfab902eb80bf974"
 dependencies = [
  "bare-metal 1.0.0",
  "cortex-m",
