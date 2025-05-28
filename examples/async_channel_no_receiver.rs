@@ -21,7 +21,6 @@ mod app {
 
     const CAPACITY: usize = 1;
     type Sender<T> = channel::Sender<'static, T, CAPACITY>;
-    type Receiver<T> = channel::Receiver<'static, T, CAPACITY>;
 
 
     #[init]
