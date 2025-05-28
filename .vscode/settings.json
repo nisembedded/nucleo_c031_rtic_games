@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "defmt",
+        "eabi",
+        "monotonics",
+        "rtic",
+        "rustflags",
+        "systick",
+        "Tdefmt",
+        "thumbv",
+        "Tlink",
+        "USART"
+    ]
+}
