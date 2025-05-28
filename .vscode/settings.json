@@ -2,6 +2,9 @@
     "cSpell.words": [
         "defmt",
         "eabi",
+        "exti",
+        "gpioa",
+        "GPIOC",
         "monotonics",
         "rtic",
         "rustflags",
@@ -10,5 +13,7 @@
         "thumbv",
         "Tlink",
         "USART"
-    ]
+    ],
+    "rust-analyzer.cargo.target": "thumbv6m-none-eabi",
+    "rust-analyzer.check.allTargets": false,
 }
